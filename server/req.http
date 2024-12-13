@@ -8,8 +8,8 @@ POST {{baseUrl}}/user/signup
 Content-Type: {{contentType}}
 
 {
-  "name": "Admin User 5",
-  "email": "admin5@example.com",
+  "name": "Admin User 6",
+  "email": "admin65@example.com",
   "password": "securePassword123",
   "role": "admin"
 }
@@ -19,41 +19,43 @@ POST {{baseUrl}}/user/signup
 Content-Type: {{contentType}}
 
 {
-  "name": "Designer34 ",
-  "email": "designer5@example.com",
+  "name": "Designer35 ",
+  "email": "designer35@example.com",
   "password": "securePassword123",
   "role": "designer"
 }
 
 ### Create Source Manager
-POST {{baseUrl}}/user/signin
-Content-Type: {{contentType}}
-
-{
-  "name": "John Doe",
-  "email": "john.doe@techinnovations.com",
-  "password": "smPassword123",
-  "role": "sourceManager",
-}
 ### Create Source Manager
-POST {{baseUrl}}/user/createCompany
+POST {{baseUrl}}/comp/createCompany
 Content-Type: {{contentType}}
 
 {
-  "companyName": "Tech Innovations",
-  "email": "contact@techinnovations.com",
+  "companyName": "High lander",
+  "email": "contact@techinnovation.com",
   "password": "companyPassword123",
-  "role": "CompanyAdmin",
-  "sourceManagers": [
+  "role": "CompanyAdmin"
+ 
+}
+
+
+### Sign In
+POST {{baseUrl}}/comp/addsm
+Content-Type: {{contentType}}
+
+{
+  
+  "companyId":"675c2c852ca20486464247f4",
+   "sourceManagers": [
     {
-      "name": "John Doe",
-      "email": "john.doe@techinnovations.com",
+      "name": "John Doe2",
+      "email": "john.d2oe@techinnovations.com",
       "password": "smPassword123",
       "role": "SourceManager"
     },
     {
-      "name": "Jane Smith",
-      "email": "jane.smith@techinnovations.com",
+      "name": "Jane Sm2ith",
+      "email": "jane.sm2ith@techinnovations.com",
       "password": "smPassword456",
       "role": "SourceManager"
     }
@@ -61,12 +63,12 @@ Content-Type: {{contentType}}
 }
 
 
-### Sign In
-POST {{baseUrl}}/signin
+###
+POST {{baseUrl}}/user/signin
 Content-Type: {{contentType}}
 
 {
-  "email": "admin@example.com",
-  "password": "securePassword123",
-  "role": "sourceManager"
+  "email": "jane.sm2ith@techinnovations.com",
+  "password": "smPassword456",
+  "role":"sourceManager"
 }

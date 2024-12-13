@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); // Import CORS middleware
 const userRoutes = require('./Routes/userRoutes.js');
+const compRoutes = require('./Routes/companyadminroutes.js');
+
 const app = express();
 app.use(express.json());
 
@@ -21,6 +23,7 @@ mongoose.connect('mongodb+srv://sharath7693:dASAm9lfV67DtEzQ@deadpool.oekbu.mong
 });
 
 app.use('/api/user', userRoutes);
+app.use('/api/comp', compRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
