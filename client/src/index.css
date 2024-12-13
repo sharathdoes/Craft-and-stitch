@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+@layer base {
+  html {
+    font-family: "Public Sans", sans-serif;
+  }
+}
+
+/* Alternatively, you can add it to a specific class */
+body {
+  font-family: "Public Sans", sans-serif;
+}
