@@ -7,11 +7,6 @@ const messageSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true
     },
-    auctionRoomId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'AuctionRoom',
-        required: true
-    },
     content: {
         type: String,
         required: true
