@@ -1,0 +1,249 @@
+@baseUrl = http://localhost:3000/api
+@contentType = application/json
+
+### Sign Up HR
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentT ype}}
+
+{
+    "username": "hrmanager",
+    "email": "hr@company.com",
+    "password": "password123",
+    "role": "HR"
+}
+
+### Sign Up Team Lead
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentType}}
+
+{
+    "username": "teamlead1",
+    "email": "lead@company.com",
+    "password": "password123",
+    "role": "TEAM LEAD",
+    "company_id": "nvwuiubvw938hnvwWA"
+}
+
+### Sign Up Employee
+POST {{baseUrl}}/users/signup
+Content-Type: {{contentType}}
+
+{
+    "username": "employee1",
+    "email": "emp@company.com",
+    "password": "password123",
+    "role": "EMP",
+    "company_id": "nvwuiubvw938hnvwWA"
+}
+
+### Sign In
+POST {{baseUrl}}/users/signin
+Content-Type: {{contentType}}
+
+{
+    "email": "useroftransparent@gmail.com",
+    "password": "qwertyuiop"
+}
+
+### Create Company (HR only)
+POST {{baseUrl}}/companies/create
+Content-Type: {{contentType}}
+
+{
+    "email": "hr@company.com",
+    "company_name": "Tech  Ltd",
+    "company_id":"12334"
+}
+
+
+### Add HR
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "John HR",
+  "email": "john.hr@example.com",
+  "password": "randomHRpassword123",
+  "role": "HR",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Leadership", "HR Management"]
+}
+
+### Add Team Lead 1
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Alice Lead",
+  "email": "alice.lead@example.com",
+  "password": "randomLeadPass456",
+  "role": "TEAM LEAD",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Project Management", "JavaScript"]
+}
+
+### Add Team Lead 2
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Bob Lead",
+  "email": "bob.lead@example.com",
+  "password": "randomLeadPass789",
+  "role": "TEAM LEAD",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Agile Methodology", "Python"]
+}
+
+### Add Employee 1
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Charlie Employee",
+  "email": "charlie.emp@example.com",
+  "password": "randomEmpPass001",
+  "role": "EMP",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["React", "JavaScript"]
+}
+
+### Add Employee 2
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Daisy Employee",
+  "email": "daisy.emp@example.com",
+  "password": "randomEmpPass002",
+  "role": "EMP",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Node.js", "Express"]
+}
+
+### Add Employee 3
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Eve Employee",
+  "email": "eve.emp@example.com",
+  "password": "randomEmpPass003",
+  "role": "EMP",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Python", "Data Analysis"]
+}
+
+### Add Employee 4
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Frank Employee",
+  "email": "frank.emp@example.com",
+  "password": "randomEmpPass004",
+  "role": "EMP",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["Java", "Spring Boot"]
+}
+
+### Add Employee 5
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "Grace Employee",
+  "email": "grace.emp@example.com",
+  "password": "randomEmpPass005",
+  "role": "EMP",
+  "companyName": "TechCorp",
+  "company_id": "secretCompanyKey123",
+  "skillset": ["UI/UX Design", "Figma"]
+}
+
+### Add Task 1
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Develop Login Feature",
+  "description": "Implement login using React and Node.js",
+  "company_name": "COMPANY_ID_HERE",
+  "created_by": "TEAM_LEAD_ID_HERE",
+  "importancy": "high",
+  "deadline": "2024-12-15",
+  "sub_tasks": [
+    {
+      "title": "Frontend Login Page",
+      "description": "Design and implement login UI in React",
+      "assigned_to": "EMPLOYEE_1_ID_HERE",
+      "deadline": "2024-12-10",
+      "required_skills": ["React", "UI/UX"]
+    },
+    {
+      "title": "Backend Authentication",
+      "description": "Set up Node.js authentication system",
+      "assigned_to": "EMPLOYEE_2_ID_HERE",
+      "deadline": "2024-12-12",
+      "required_skills": ["Node.js", "Express"]
+    }
+  ]
+}
+
+### Add Task 2
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Build Dashboard",
+  "description": "Create an admin dashboard using React",
+  "company_name": "COMPANY_ID_HERE",
+  "created_by": "TEAM_LEAD_ID_HERE",
+  "importancy": "medium",
+  "deadline": "2024-12-20",
+  "sub_tasks": [
+    {
+      "title": "Implement Charts",
+      "description": "Use chart.js to create visualizations",
+      "assigned_to": "EMPLOYEE_3_ID_HERE",
+      "deadline": "2024-12-16",
+      "required_skills": ["React", "Chart.js"]
+    },
+    {
+      "title": "Create User Tables",
+      "description": "Develop interactive tables for data management",
+      "assigned_to": "EMPLOYEE_4_ID_HERE",
+      "deadline": "2024-12-18",
+      "required_skills": ["React", "Table Library"]
+    }
+  ]
+}
+
+### Add Task 3
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Optimize Database",
+  "description": "Optimize MongoDB for faster queries",
+  "company_name": "COMPANY_ID_HERE",
+  "created_by": "TEAM_LEAD_ID_HERE",
+  "importancy": "high",
+  "deadline": "2024-12-18",
+  "sub_tasks": [
+    {
+      "title": "Create Indexes",
+      "description": "Create necessary indexes for faster queries",
+      "assigned_to": "EMPLOYEE_5_ID_HERE",
+      "deadline": "2024-12-14",
+      "required_skills": ["MongoDB", "Database Optimization"]
+    }
+  ]
+}
