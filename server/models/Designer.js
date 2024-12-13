@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const designerSchema = new mongoose.Schema({
     name: {
@@ -16,12 +17,19 @@ const designerSchema = new mongoose.Schema({
     },
     portfolio: {
         type: String,
-        default: null
+        default: null,
+        required:false
     },
     bio: {
         type: String,
-        default: null
+        default: null,
+        required:false
     },
+    role: {
+        type: String,
+        default: 'designer',
+        required:false
+      },
     createdAt: {
         type: Date,
         default: Date.now

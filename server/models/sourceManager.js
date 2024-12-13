@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
 const sourceManagerSchema = new mongoose.Schema({
     name: {
@@ -18,7 +19,14 @@ const sourceManagerSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    createdAt: {
+   
+    role: {
+        type: String,
+        default: 'sourceManager',
+        required:false,
+        
+      },
+      createdAt: {
         type: Date,
         default: Date.now
     },

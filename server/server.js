@@ -11,12 +11,16 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
 }));
 
-mongoose.connect('mongodb+srv://sharath7693:dASAm9lfV67DtEzQ@deadpool.oekbu.mongodb.net/goldenexperience', {
+mongoose.connect('mongodb+srv://sharath7693:dASAm9lfV67DtEzQ@deadpool.oekbu.mongodb.net/c&s', {
     useNewUrlParser: true,
     useUnifiedTopology: true
+}).then(() => {
+    console.log('Connected to the database');
+}).catch((err) => {
+    console.log('Failed to connect to the database', err);
 });
 
-app.use('/api/users', userRoutes);
+app.use('/api/user', userRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
