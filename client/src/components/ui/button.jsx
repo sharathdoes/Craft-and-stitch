@@ -16,13 +16,17 @@ const buttonVariants = cva(
           'bg-white dark:bg-darkBg dark:text-darkText border-2 border-border dark:border-darkBorder shadow-light dark:shadow-dark hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:hover:shadow-none',
         reverse:
           'bg-white border-2 border-border dark:border-darkBorder hover:translate-x-reverseBoxShadowX hover:translate-y-reverseBoxShadowY hover:shadow-light dark:hover:shadow-dark',
-      },
-      size: {
-        default: 'h-10 px-4 py-2',
-        sm: 'h-9 px-3',
-        lg: 'h-11 px-8',
-        icon: 'h-10 w-10',
-      },
+        outline:
+          'border-2 border-border dark:border-darkBorder',
+        },
+        size: {
+          default: "h-9 px-8 py-6",
+          sm: "h-8 rounded-md px-3 text-xs",
+          lg: "h-10 rounded-md px-8",
+          icon: "h-9 w-9",
+          landing: "h-full px-6 py-3 font-bold",
+          auto: "h-auto px-2 py-2",
+        },
     },
     defaultVariants: {
       variant: 'default',

@@ -2,14 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Styles */
 @layer base {
-  html {
-    font-family: "Public Sans", sans-serif;
+  :root {
+    --background: #FFFFFF;
+    --foreground: 79 73% 2%;
+    --muted: 199 16% 88%;
+    --muted-foreground: 199 0% 39%;
+    --popover: 79 47% 99%;
+    --popover-foreground: 79 73% 2%;
+    --card: 79 47% 98%;
+    --card-foreground: 79 73% 1%;
+    --border: 79 7% 91%;
+    --input: 79 7% 91%;
+    --primary: 79 48% 58%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 199 48% 58%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 319 48% 58%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 5 96% 41%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 79 48% 58%;
+    --chart-1: 79 48% 58%;
+    --chart-2: 199 48% 58%;
+    --chart-3: 319 48% 58%;
+    --chart-4: 199 48% 61%;
+    --chart-5: 79 51% 58%;
+    --radius: 0.5rem;
   }
+
+  .dark {
+    --background: 79 45% 3%;
+    --foreground: 79 14% 100%;
+    --muted: 199 16% 12%;
+    --muted-foreground: 199 0% 61%;
+    --popover: 79 45% 3%;
+    --popover-foreground: 79 14% 100%;
+    --card: 79 45% 4%;
+    --card-foreground: 0 0% 100%;
+    --border: 79 7% 11%;
+    --input: 79 7% 11%;
+    --primary: 79 48% 58%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 199 48% 58%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 319 48% 58%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 5 96% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 79 48% 58%;
+    --chart-1: 79 48% 58%;
+    --chart-2: 199 48% 58%;
+    --chart-3: 319 48% 58%;
+    --chart-4: 199 48% 61%;
+    --chart-5: 79 51% 58%;
+  }
+  
+
 }
 
-/* Alternatively, you can add it to a specific class */
-body {
+body{
   font-family: "Public Sans", sans-serif;
+  background: rgba(254,249,195,255);
 }

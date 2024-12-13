@@ -8,27 +8,27 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          main: '#a388ee',
+          main: '#FFFFFF',
           mainAccent: '#9e66ff', // not needed for shadcn components
           overlay: 'rgba(0,0,0,0.8)', // background color overlay for alert dialogs, modals, etc.
     
           // light mode
-          bg: '#e3dff2',
-          text: '#000',
+          bg: '#FEF2E8',
+          text: '#000000',
           border: '#000',
     
           // dark mode
-          darkBg: '#272733',
+          darkBg: '#374151',
           darkText: '#eeefe9',
           darkBorder: '#000',
           secondaryBlack: '#212121', // opposite of plain white, not used pitch black because borders and box-shadows are that color 
         },
         borderRadius: {
-          base: '6px'
+          base: '5px'
         },
         boxShadow: {
-          light: '5px 3px 0px 0px #000',
-          dark: '5px 3px 0px 0px #000',
+          light: '2px 2px 0px 0px #000',
+          dark: '2px 2px 0px 0px #000',
         },
         translate: {
           boxShadowX: '5px',
