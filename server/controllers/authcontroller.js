@@ -5,6 +5,11 @@ const Company=require("../models/company")
 const Admin = require('../models/admin');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
+
+// Secret key for JWT from .env
+const secretKey = process.env.JWT_SECRET_KEY;
 
 const signUp = async (req, res) => {
   try {
@@ -18,7 +23,9 @@ const signUp = async (req, res) => {
       return res.status(400).json({ error: 'Invalid role provided.' });
     }
     await user.save();
-    res.status(201).json({ message: 'User registered successfully.' });
+    // Generate JWT token
+    const token = jwt.sign({ id: user._id, role: user.role }, secretKey, { expiresIn: '1h' });
+    res.status(201).json({ message: 'User registered successfully.', user, token });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error.' });
   }
@@ -48,10 +55,14 @@ const createCompany = async (req, res) => {
       // Save the company document
       const savedCompany = await newCompany.save();
   
+      // Generate JWT token
+      const token = jwt.sign({ id: savedCompany._id, role: savedCompany.role }, secretKey, { expiresIn: '1h' });
+  
       // Respond with success
       res.status(201).json({
         message: 'Company created successfully.',
         company: savedCompany,
+        token,
       });
     } catch (err) {
       console.error('Error creating company:', err);
@@ -142,8 +153,9 @@ const signIn = async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials.' });
     }
 
-  
-    res.status(200).json({ message: 'Sign in successful.' });
+    // Generate JWT token
+    const token = jwt.sign({ id: user._id, role: user.role }, secretKey, { expiresIn: '1h' });
+    res.status(200).json({ message: 'Sign in successful.', user, token });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error.' });
   }
